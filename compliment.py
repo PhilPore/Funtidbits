@@ -34,6 +34,23 @@ def threewaycomp(s):
             sol_set.append(sorted([compdict[c][0], compdict[c][1], c]))
     print(sol_set)
 '''         
+def divisibleSumPairs(n, k, ar): #initially did this O(n^2). This is now O(n+k), O(k), had to look up external resources to optimize. Thankfully this reminded me buckets were a thing hah.
+    count = 0
+   #we use buckets based off modulo k
+    buckets = [0 for i in range(k)] #spans from 0 to k-1
+    for i in range(len(ar)):
+        comp = ar[i]%k #as to fit the buckjets
+        print(ar[i])
+        print(comp)
+        print(k-comp) #we need this to find what will equal k from our comp
+        print("..")
+        count+=buckets[(k-comp)%k] #insert the value from the bucket thats needed for our compliment. 
+        #Modulo is to ensure things divisible by it go to 0 (meaning its already divisible)
+        buckets[comp]+=1 #increment our bucket with the modded index value. 
+        #Meaning we it exists. This is helpful when we find another comp value that uses the previous index value. 
+        # #Since there is a value in there,we just add that to count. #
+        # Presumably to account for 1+2 and 2+4 (if 4 was already found)
+    return count
 
 def threescomp(n):
     sol_set = []
@@ -75,6 +92,9 @@ def threescomp(n):
 x = [1,1,-1, -2,-1,0]
 y = [-1,0,1,2,-1,-4]
 z = [3,0,-2,-1,1,2]
+
+ar = [1, 3, 2, 6, 1, 2]
+print(divisibleSumPairs(6,3,arr))
 #threewaycomp(x)
 pre = threescomp(y)
 print(pre)
