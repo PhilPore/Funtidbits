@@ -1,5 +1,5 @@
 #leetcode problem 654. Medium: Maximum Binary Tree. I
-#t works!
+#t works! I did some edits though because in the problem its part of a class so I got peeved when I tried to do recursio and forgot the self.<method>. Don't be like me. Be smarter.
 '''
 Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:
 
