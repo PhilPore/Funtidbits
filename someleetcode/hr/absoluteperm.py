@@ -21,7 +21,7 @@ def absolutePermutation(n, k):
         return [-1]
     
     for i in range(len(arr)):
-        if (i//k)%2 == 0: #efectively, is I+K within the index bounds
+        if (i//k)%2 == 0: #this is because of the intervals causing a change from i+k to i-k. Thats an interesting pattern
             arr[i] = arr[i]+k
         else:
             arr[i] = abs((i+1)-k)
