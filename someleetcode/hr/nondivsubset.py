@@ -1,5 +1,6 @@
 #!/bin/python3
-
+#https://www.geeksforgeeks.org/subset-no-pair-sum-divisible-k/
+#https://www.hackerrank.com/challenges/non-divisible-subset/problem
 import math
 import os
 import random
