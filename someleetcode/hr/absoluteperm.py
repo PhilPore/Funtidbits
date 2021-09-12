@@ -21,7 +21,7 @@ def absolutePermutation(n, k):
         return [-1]
     
     for i in range(len(arr)):
-        if (i//k)%2 == 0: #this is because of the intervals causing a change from i+k to i-k. Thats an interesting pattern
+        if (i//k)%2 == 0: #this is because for every kth consecutive interval, we need to swap i+k to i-k
             arr[i] = arr[i]+k
         else:
             arr[i] = abs((i+1)-k)
