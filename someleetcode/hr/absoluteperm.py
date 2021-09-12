@@ -16,12 +16,12 @@ def absolutePermutation(n, k):
     if k == 0:
         return arr
     #print(arr)
-    if n%(k*2) != 0:
+    if n%(k*2) != 0: #ensure there is no overlap, ie if you have n = 6 and k = 4 youre not going to be able to find a lot of valid permutations in the range, thus not possible
         print(-1)
         return [-1]
     
     for i in range(len(arr)):
-        if (i//k)%2 == 0:
+        if (i//k)%2 == 0: #efectively, is I+K within the index bounds
             arr[i] = arr[i]+k
         else:
             arr[i] = abs((i+1)-k)
