@@ -24,7 +24,7 @@ def nonDivisibleSubset(k, s):
         mat[s[i]%k]+=1 #find the frequency of each modulo in range
     print(mat)
     if (k%2) == 0:
-        mat[k//2] = min(mat[k//2],1)
+        mat[k//2] = min(mat[k//2],1) #due to the sum of 2 numbers being i and k-i we need to split the middle for an even number due to it being counted twice
     res = min(1,mat[0])
     print(k//2+1)
     for i in range(1,k//2+1):
